@@ -2,6 +2,11 @@ package config;
 
 import javax.sql.DataSource;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import rewards.RewardNetwork;
+
 /**
  * TODO-00: In this lab, you are going to exercise the following:
  * - Creating Spring configuration class
@@ -41,10 +46,35 @@ import javax.sql.DataSource;
  * - Note that return type of each bean method should be an interface
  *   not an implementation.
  */
-
+@Configuration
 public class RewardsConfig {
 
 	// Set this by adding a constructor.
 	private DataSource dataSource;
+
+	public RewardsConfig(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
+	@Bean
+	RewardNetwork rewardNetwork() {
+		return null;
+
+	}
+
+	@Bean
+	void accountRepository() {
+
+	}
+	
+	@Bean
+	void restaurantRepository() {
+
+	}
+
+	@Bean
+	void rewardRepository() {
+
+	}
 
 }
