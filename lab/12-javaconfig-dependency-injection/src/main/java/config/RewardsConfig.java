@@ -6,6 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import rewards.RewardNetwork;
+import rewards.internal.RewardNetworkImpl;
+import rewards.internal.account.AccountRepository;
+import rewards.internal.account.JdbcAccountRepository;
+import rewards.internal.restaurant.JdbcRestaurantRepository;
+import rewards.internal.restaurant.RestaurantRepository;
+import rewards.internal.reward.JdbcRewardRepository;
+import rewards.internal.reward.RewardRepository;
 
 /**
  * TODO-00: In this lab, you are going to exercise the following:
@@ -58,23 +65,29 @@ public class RewardsConfig {
 
 	@Bean
 	RewardNetwork rewardNetwork() {
-		return null;
+		return new RewardNetworkImpl(accountRepository(), restaurantRepository(), rewardRepository());
 
 	}
 
 	@Bean
-	void accountRepository() {
-
+	AccountRepository accountRepository() {
+		JdbcAccountRepository acc = new JdbcAccountRepository();
+		acc.setDataSource(dataSource);
+		return acc;
 	}
 	
 	@Bean
-	void restaurantRepository() {
-
+	RestaurantRepository restaurantRepository() {
+		JdbcRestaurantRepository acc = new JdbcRestaurantRepository();
+		acc.setDataSource(dataSource);
+		return acc;
 	}
 
 	@Bean
-	void rewardRepository() {
-
+	RewardRepository rewardRepository() {
+		JdbcRewardRepository acc = new JdbcRewardRepository();
+		acc.setDataSource(dataSource);
+		return acc;
 	}
 
 }
