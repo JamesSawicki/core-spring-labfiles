@@ -71,23 +71,23 @@ public class RewardsConfig {
 
 	@Bean
 	AccountRepository accountRepository() {
-		JdbcAccountRepository acc = new JdbcAccountRepository();
-		acc.setDataSource(dataSource);
-		return acc;
+		JdbcAccountRepository repo = new JdbcAccountRepository();
+		repo.setDataSource(dataSource);
+		return repo;
 	}
 	
 	@Bean
 	RestaurantRepository restaurantRepository() {
-		JdbcRestaurantRepository acc = new JdbcRestaurantRepository();
-		acc.setDataSource(dataSource);
-		return acc;
+		JdbcRestaurantRepository repo = new JdbcRestaurantRepository();
+		repo.setDataSource(dataSource);
+		return repo;
 	}
 
 	@Bean
 	RewardRepository rewardRepository() {
-		JdbcRewardRepository acc = new JdbcRewardRepository();
-		acc.setDataSource(dataSource);
-		return acc;
+		JdbcRewardRepository repo = new JdbcRewardRepository();
+		repo.setDataSource(dataSource);
+		return repo;
 	}
 
 }
