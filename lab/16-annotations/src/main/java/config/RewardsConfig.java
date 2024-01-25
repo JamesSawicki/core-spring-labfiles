@@ -2,9 +2,6 @@ package config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
-
-import javax.sql.DataSource;
 
 /**
  * TODO-07: Perform component-scanning and run the test again
@@ -14,14 +11,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @ComponentScan("rewards.internal")
-public class RewardsConfig {
-
-	DataSource dataSource;
-
-	public RewardsConfig(DataSource dataSource) {
-		this.dataSource = dataSource;
-	}
-		
+public class RewardsConfig {		
 	
 	// TODO-02: Remove all of the @Bean methods above.
 	// - Remove the code that autowires DataSource as well.

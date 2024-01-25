@@ -64,7 +64,6 @@ public class JdbcRestaurantRepository implements RestaurantRepository {
 	 * restaurants. When the instance of JdbcRestaurantRepository is created, a
 	 * Restaurant cache is populated for read only access
 	 */
-	@Autowired
 	public JdbcRestaurantRepository(DataSource dataSource) {
 		this.dataSource = dataSource;
 		this.populateRestaurantCache();
@@ -72,7 +71,7 @@ public class JdbcRestaurantRepository implements RestaurantRepository {
 
 	public JdbcRestaurantRepository() {
 	}
-
+	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
