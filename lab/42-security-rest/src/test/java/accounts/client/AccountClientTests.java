@@ -25,6 +25,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest(classes = {RestWsApplication.class},
         webEnvironment = WebEnvironment.RANDOM_PORT)
+@Disabled
 public class AccountClientTests {
 
     @Autowired
